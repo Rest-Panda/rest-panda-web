@@ -4,34 +4,35 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {AccessComponent} from './access.component';
 import {LoginComponent} from './login/login.component';
-import {ProfileComponent} from './profile/profile.component';
 import {RegisterComponent} from './register/register.component';
-import {StaticModule} from '../static/static.module';
 import {RequestPasswordComponent} from './request-password/request-password.component';
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
+import {AccessFooterComponent} from './footer/access-footer.component';
+import {AccessHeaderComponent} from './header/access-header.component';
 
 @NgModule({
     declarations: [
         AccessComponent,
         LoginComponent,
-        ProfileComponent,
         RegisterComponent,
         RequestPasswordComponent,
-        ResetPasswordComponent
+        ResetPasswordComponent,
+        AccessFooterComponent,
+        AccessHeaderComponent
     ],
     exports: [
         AccessComponent,
         LoginComponent,
-        ProfileComponent,
         RegisterComponent,
         RequestPasswordComponent,
-        ResetPasswordComponent
+        ResetPasswordComponent,
+        AccessFooterComponent,
+        AccessHeaderComponent
     ],
     imports: [
         BrowserModule,
         CommonModule,
-        RouterModule,
-        StaticModule
+        RouterModule
     ],
     providers: [],
     bootstrap: [AccessComponent]
