@@ -29,8 +29,7 @@ import {MainModule} from './main/main.module';
     ],
     declarations: [
         AppComponent,
-        MainComponent,
-
+        MainComponent
     ],
     providers: [],
     bootstrap: [AppComponent]
