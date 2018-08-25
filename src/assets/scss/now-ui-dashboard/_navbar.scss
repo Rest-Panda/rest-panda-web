@@ -197,6 +197,14 @@
         line-height: $line-height-nav-link;
     }
 
+    .navbar-brand-lg{
+        text-transform: uppercase;
+        font-size: 1.5em;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        line-height: 1.625rem;
+    }
+
     .navbar-toggler{
         width: 37px;
         height: 27px;
@@ -220,6 +228,12 @@
 
     &.navbar-transparent{
         background-color: $transparent-bg !important;
+        box-shadow: none;
+        color: $white-color;
+    }
+
+    &.navbar-blur{
+        background-color: #00000045 !important;
         box-shadow: none;
         color: $white-color;
     }

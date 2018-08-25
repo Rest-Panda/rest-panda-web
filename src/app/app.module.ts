@@ -11,8 +11,9 @@ import {ComponentsModule} from './components/components.module';
 
 import {AppComponent} from './app.component';
 
-import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
+import {MainComponent} from './main/main.component';
 import {AccessModule} from './access/access.module';
+import {MainModule} from './main/main.module';
 
 @NgModule({
     imports: [
@@ -23,11 +24,12 @@ import {AccessModule} from './access/access.module';
         AccessModule,
         RouterModule,
         AppRoutingModule,
+        MainModule,
         NgbModule.forRoot()
     ],
     declarations: [
         AppComponent,
-        AdminLayoutComponent,
+        MainComponent,
 
     ],
     providers: [],

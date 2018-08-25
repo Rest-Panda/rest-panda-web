@@ -7,8 +7,6 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {RequestPasswordComponent} from './request-password/request-password.component';
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
-import {AccessFooterComponent} from './footer/access-footer.component';
-import {AccessHeaderComponent} from './header/access-header.component';
 
 @NgModule({
     declarations: [
@@ -16,18 +14,14 @@ import {AccessHeaderComponent} from './header/access-header.component';
         LoginComponent,
         RegisterComponent,
         RequestPasswordComponent,
-        ResetPasswordComponent,
-        AccessFooterComponent,
-        AccessHeaderComponent
+        ResetPasswordComponent
     ],
     exports: [
         AccessComponent,
         LoginComponent,
         RegisterComponent,
         RequestPasswordComponent,
-        ResetPasswordComponent,
-        AccessFooterComponent,
-        AccessHeaderComponent
+        ResetPasswordComponent
     ],
     imports: [
         BrowserModule,

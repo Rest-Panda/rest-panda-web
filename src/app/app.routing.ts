@@ -1,41 +1,62 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {BrowserModule} from '@angular/platform-browser';
+import {Routes, RouterModule} from '@angular/router';
+import {MainComponent} from './main/main.component';
+import {LoginComponent} from './access/login/login.component';
+import {RegisterComponent} from './access/register/register.component';
+import {AccessComponent} from './access/access.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
+import {TableListComponent} from './table-list/table-list.component';
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { LoginComponent } from './access/login/login.component';
-
-const routes: Routes =[
+const routes: Routes = [
     {
-        path: 'login',
-        component: LoginComponent
+        path: 'main',
+        component: MainComponent,
+        children: [
+            {
+                path: 'dashboard',
+                component: DashboardComponent
+            },
+            {
+                path: 'user-profile',
+                component: UserProfileComponent
+            },
+            {
+                path: 'table-list',
+                component: TableListComponent
+            },
+        ]
     },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  }, {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [
-        {
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  }]},
-  {
-    path: '**',
-    redirectTo: 'dashboard'
-  }
+    {
+        path: 'access',
+        component: AccessComponent,
+        children: [
+            {
+                path: 'login',
+                component: LoginComponent
+            },
+            {
+                path: 'register',
+                component: RegisterComponent
+            }
+        ]
+    },
+    {
+        path: '',
+        redirectTo: 'main/dashboard',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-  ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        RouterModule.forRoot(routes)
+    ],
+    exports: [],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
